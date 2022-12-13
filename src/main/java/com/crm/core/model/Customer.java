@@ -21,7 +21,7 @@ public class Customer {
     private String mobile;
     private String notes;
     private Boolean active;
-    @OneToMany
+    @OneToMany(mappedBy="id")
     private Set<Order> orders;
 
     public Customer() {

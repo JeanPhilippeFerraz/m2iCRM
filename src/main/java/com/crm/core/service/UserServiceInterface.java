@@ -7,9 +7,9 @@ import java.util.List;
 public interface UserServiceInterface {
 
     public List<User> getAll();
-    public User getId(Integer id);
+    public User getById(Integer id) throws Exception;
     public User createUser(User user);
-    public void deleteUser(User user);
-    public User updateUser(User user);
+    public void deleteUser(Integer id);
+    public User updateUser(User user) throws Exception;
 
 }

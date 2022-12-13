@@ -9,8 +9,8 @@ public interface CustomerServiceInterface {
 
     public List<Customer> getAll();
 
-    public Customer> getId(Integer id) throws Exception;
+    public Customer getById(Integer id) throws Exception;
     public Customer createCustomer(Customer customer);
-    public Boolean deleteCustomer(Customer customer);
+    public void deleteCustomer(Integer id);
     public Customer updateCustomer(Customer customer) throws Exception;
 }

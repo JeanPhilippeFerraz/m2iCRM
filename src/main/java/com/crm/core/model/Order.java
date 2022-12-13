@@ -18,8 +18,8 @@ public class Order {
     private String status;
     private String type;
     private String notes;
-    @ManyToOne
-    @JoinColumn(name = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="id", nullable=false)
     private Customer customer;
 
     public Order() {

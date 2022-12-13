@@ -1,15 +1,14 @@
-package com.crm.core.service.imp;
+package com.crm.core.service.impl;
 
 import com.crm.core.model.Customer;
 import com.crm.core.repository.CustomerRepositoryInterface;
 import com.crm.core.service.CustomerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
+@Service
 public class CustomerServiceImpl implements CustomerServiceInterface {
 
     @Autowired
@@ -17,6 +16,7 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 
     @Override
     public List<Customer> getAll() {
+
         return repository.findAll();
     }
 
@@ -27,12 +27,14 @@ public class CustomerServiceImpl implements CustomerServiceInterface {
 
     @Override
     public Customer createCustomer(Customer customer) {
+
         return repository.save(customer);
     }
 
     @Override
-    public Boolean deleteCustomer(Customer customer) {
-        repository.deleteById(customer.getId());
+    public void deleteCustomer(Integer id) {
+
+        repository.deleteById(id);
     }
 
     @Override
